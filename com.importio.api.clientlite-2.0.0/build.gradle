@@ -1,0 +1,5 @@
+
+dependencies {
+    apply plugin: 'application'
+    compile files('com.importio.api.clientlite-2.0.0.jar')
+}
