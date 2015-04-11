@@ -14,6 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.omarasifshaikh.libhours.libraryhours.model.Flower;
+import com.omarasifshaikh.libhours.libraryhours.parsers.FlowerXMLParser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +27,8 @@ public class MainActivity extends ActionBarActivity {
     TextView output;
     ProgressBar pb;
     List<MyTask> tasks;
+
+    List<Flower> flowerList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,8 +86,12 @@ public class MainActivity extends ActionBarActivity {
         */
     }
 
-    protected void updateDisplay(String message) {
-        output.append(message + "\n");
+    protected void updateDisplay() {
+        if(flowerList!=null){
+            for(Flower flower : flowerList) {
+                output.append(flower.getName() + "\n");
+            }
+        }
     }
 
     protected boolean isOnline(){
@@ -99,7 +108,7 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onPreExecute() {
-            updateDisplay("starting class");
+            //updateDisplay("starting class");
             if(tasks.size() == 0) {
                 pb.setVisibility(View.VISIBLE);
             }
@@ -114,7 +123,9 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            updateDisplay(s);
+            flowerList = FlowerXMLParser.parseFeed(s);
+
+            updateDisplay();
             //pb.setVisibility(View.INVISIBLE);
 
             tasks.remove(this);
@@ -125,7 +136,7 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onProgressUpdate(String... values) {
-            updateDisplay(values[0]);
+            //updateDisplay(values[0]);
         }
     }
 }

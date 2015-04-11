@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LibraryHours.iml" filepath="$PROJECT_DIR$/LibraryHours.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SFSU-Library-hours.iml" filepath="$PROJECT_DIR$/SFSU-Library-hours.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.importio.api.clientlite-2.0.0/com.importio.api.clientlite-2.0.0.iml" filepath="$PROJECT_DIR$/com.importio.api.clientlite-2.0.0/com.importio.api.clientlite-2.0.0.iml" />
     </modules>
