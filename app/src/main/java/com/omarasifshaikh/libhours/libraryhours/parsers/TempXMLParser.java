@@ -1,5 +1,5 @@
 package com.omarasifshaikh.libhours.libraryhours.parsers;
-
+/*
 import com.omarasifshaikh.libhours.libraryhours.model.Flower;
 
 import java.io.StringReader;
@@ -10,7 +10,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 /**
  * Created by Omar on 4/10/2015.
- */
+
 public class FlowerXMLParser {
     public static List<Flower> parseFeed(String content) {
 
@@ -86,3 +86,4 @@ public class FlowerXMLParser {
 
     }
 }
+*/

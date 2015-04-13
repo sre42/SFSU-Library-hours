@@ -15,4 +15,20 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textview">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView android:id="@+id/textview2" />
+            <TextView android:id="@+id/textview3" />
+
+        </TableRow>
+
+    </TableLayout>
+
 </RelativeLayout>

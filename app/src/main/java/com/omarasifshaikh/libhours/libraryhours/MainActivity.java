@@ -15,9 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.omarasifshaikh.libhours.libraryhours.model.Flower;
 import com.omarasifshaikh.libhours.libraryhours.model.LibraryEntry;
-import com.omarasifshaikh.libhours.libraryhours.parsers.FlowerJSONParser;
 import com.omarasifshaikh.libhours.libraryhours.parsers.LibraryEntryJSONParser;
 
 import java.util.ArrayList;
@@ -28,11 +26,10 @@ import java.util.List;
 public class MainActivity extends ActionBarActivity {
 
     private static final String TAG = "libApp";
-    TextView output;
+    TextView output,output2,output3;
     ProgressBar pb;
     List<MyTask> tasks;
 
-    List<Flower> flowerList;
     List<LibraryEntry> libraryEntryList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +37,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         output = (TextView) findViewById(R.id.textview);
         output.setMovementMethod(new ScrollingMovementMethod());
+        output2 = (TextView) findViewById(R.id.textview2);
+        output3 = (TextView) findViewById(R.id.textview3);
         //for(int i =0; i< 100; i++){
             //updateDisplay("line" + i);
         //}
@@ -95,19 +94,13 @@ public class MainActivity extends ActionBarActivity {
         */
     }
 
-    protected void updateDisplay() {
-        if(flowerList!=null){
-            for(Flower flower : flowerList) {
-                output.append(flower.getName() + "\n");
-            }
-        }
-    }
     protected void updateDisplay2() {
         if(libraryEntryList!=null){
             Log.d(TAG,"inside UpdateDisplay2");
             for(LibraryEntry libraryEntry : libraryEntryList) {
-                output.append(libraryEntry.getId() + "\n");
                 output.append(libraryEntry.getName() + "\n");
+                //output2.setText("lol1");
+                output.append(libraryEntry.getMon_thurs() + "\n\n\n");
             }
         }
     }
@@ -144,7 +137,6 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            //flowerList = FlowerJSONParser.parseFeed(s);
             libraryEntryList = LibraryEntryJSONParser.parseFeed(s);
             Log.d(TAG,"Done with parsing...");
 
